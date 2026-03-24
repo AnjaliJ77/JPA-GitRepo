@@ -60,5 +60,10 @@ public class StuCont {
         }
         else return ResponseEntity.notFound().build();
 }
+@PutMapping("/put")
+    String put(){
+
+    return "";
+}
 
 }
