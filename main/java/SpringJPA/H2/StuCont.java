@@ -60,10 +60,10 @@ public class StuCont {
         }
         else return ResponseEntity.notFound().build();
 }
-@PutMapping("/put")
-    String put(){
-
-    return "";
+@PutMapping("/update/{id}")
+    StudentEntity updateUser(@RequestBody StudentEntity student, @PathVariable Long id){
+    StudentEntity upd = stuser.updateUser(student, id);
+    return ResponseEntity.ok(upd).getBody();
 }
 
 }
