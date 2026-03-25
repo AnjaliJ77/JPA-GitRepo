@@ -38,4 +38,19 @@ public class StuService {
         }
         return false;
     }
+
+
+    public StudentEntity updateUser(StudentEntity student, Long id) {
+        StudentEntity value = sturepo.findById(id).orElseThrow(()-> new RuntimeException("not found"));
+
+        value.setName(student.getName());
+
+        return sturepo.save(value);
+
+
+
+
+
+    }
+    
 }
